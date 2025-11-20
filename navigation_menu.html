@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navigation Menu Example</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 14px 20px;
+    display: block;
+  }
+
+  .nav-links a:hover {
+    background: #a30000;
+  }
+
+  .horizontal {
+    background: #800000;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .horizontal li {
+    margin: 0;
+  }
+
+  .vertical {
+    background: #800000;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+  }
+
+  .vertical li {
+    border-bottom: 1px solid #a30000;
+  }
+
+  .burger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    background: #800000;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+
+  .burger-menu {
+    display: none;
+    background: #800000;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .burger-menu li {
+    border-bottom: 1px solid #a30000;
+  }
+
+  @media (max-width: 600px) {
+    .horizontal {
+      display: none;
+    }
+    .burger {
+      display: block;
+    }
+  }
+</style>
+</head>
+<body>
+
+<ul class="horizontal nav-links">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">Services</a></li>
+  <li><a href="#">Contact</a></li>
+</ul>
+
+<ul class="vertical nav-links">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">Services</a></li>
+  <li><a href="#">Contact</a></li>
+</ul>
+
+<button class="burger" onclick="toggleBurger()">☰ Menu</button>
+<ul class="burger-menu nav-links" id="burgerMenu">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">Services</a></li>
+  <li><a href="#">Contact</a></li>
+</ul>
+
+<script>
+  function toggleBurger() {
+    const menu = document.getElementById('burgerMenu');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+  }
+</script>
+
+</body>
+</html>
